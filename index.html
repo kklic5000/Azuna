@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Azuna Portfolio</title>
   <style>
+   @font-face {
+  font-family: SweiGothicCJKtc-Regular;
+  src: url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff2) format("woff2")
+  , url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff) format("woff");
+}
     body {
       margin: 0;
       font-family: 'Swei Gothic CJK TC', -apple-system, Roboto, Helvetica, sans-serif;
@@ -38,18 +43,24 @@
     }
 
     /* Carousel */
-    .carousel {
-      overflow: visible;
-      position: relative;
-      margin: 20px auto;
-      max-width: 100%;
-    }
+   /* 修改後的 Carousel 部分 */
+.carousel {
+  overflow: visible;
+  position: relative;
+  margin: 20px auto;
+}
 
-    .carousel-track {
-      display: flex;
-      gap: 20px;
-      animation: scroll-carousel 60s linear infinite;
-    }
+.carousel-track {
+  display: flex;
+  gap: 15px;
+  animation: scroll-carousel 40s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 7.5px)); }
+}
 
     .carousel img {
       width: 403px;
@@ -57,36 +68,46 @@
       object-fit: cover;
       border-radius: 20px;
       box-shadow: -1px 1px 8px rgb(222, 215, 215);
-    }
 
-    @keyframes scroll-carousel {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-320px * 4)); }
     }
+  
+/* 修改後的 Skills 部分 */
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
 
-    /* Skills Section */
-    .skills {
-      display: flex;
-      overflow: visible;
-      margin: 20px;
-      background: none;
-      font-size: 16px;
-      white-space: nowrap;
-    }
+@keyframes scroll2 {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-200%); }
+}
 
-    .skills-track {
-      display: flex;
-      animation: scroll-skills 90s linear infinite;
-    }
+.skills {
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  background: none;
+  white-space: nowrap;
+  display: flex;
+}
 
-    .skills span {
-      margin-right: 40px;
-    }
+.skills-track {
+  display: flex;
+  animation: scroll 45s linear infinite;
+}
 
-    @keyframes scroll-skills {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
+.skills-track.second {
+  animation: scroll2 45s linear infinite;
+  animation-delay: -22.5s; /* 確保無縫過渡 */
+}
+
+.skills-track span {
+  display: inline-block;
+  margin-right: 40px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
 
     footer {
       display: flex;
@@ -110,21 +131,21 @@
   <main>
     <section class="carousel">
       <div class="carousel-track">
-        <a href="#link1"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/d5cde12c969160f4f1e3821b296262c65e1282a5571114fd967ac2b0763057f3?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 1"></a>
-        <a href="#link2"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/80b1a37189b1cf01366f7d0c680984d850846fbed8304a92d7b411b1074de5f0?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 2"></a>
-        <a href="#link3"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/a90d403862f0e09dfadee55d03fbca07c48978c15a968c506c36b020d8389053?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 3"></a>
-        <a href="#link4"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/79571c4ee19983477d73f9761b18b14e00445f79a4681702b9133a1798fcc06c?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 4"></a>
-        <!-- 重複以讓跑馬燈無縫 -->
-        <a href="#link1"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/d5cde12c969160f4f1e3821b296262c65e1282a5571114fd967ac2b0763057f3?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 1"></a>
-        <a href="#link2"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/80b1a37189b1cf01366f7d0c680984d850846fbed8304a92d7b411b1074de5f0?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 2"></a>
-        <a href="#link3"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/a90d403862f0e09dfadee55d03fbca07c48978c15a968c506c36b020d8389053?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 3"></a>
-        <a href="#link4"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/79571c4ee19983477d73f9761b18b14e00445f79a4681702b9133a1798fcc06c?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 4"></a>
-        
-    </div>
+        <!-- 原始图片 + 镜像复制 -->
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/d5cde12c969160f4f1e3821b296262c65e1282a5571114fd967ac2b0763057f3?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 1"></a>
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/80b1a37189b1cf01366f7d0c680984d850846fbed8304a92d7b411b1074de5f0?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 2"></a>
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/a90d403862f0e09dfadee55d03fbca07c48978c15a968c506c36b020d8389053?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 3"></a>
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/79571c4ee19983477d73f9761b18b14e00445f79a4681702b9133a1798fcc06c?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 4"></a>
+        <!-- 镜像复制 -->
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/d5cde12c969160f4f1e3821b296262c65e1282a5571114fd967ac2b0763057f3?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 1"></a>
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/80b1a37189b1cf01366f7d0c680984d850846fbed8304a92d7b411b1074de5f0?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 2"></a>
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/a90d403862f0e09dfadee55d03fbca07c48978c15a968c506c36b020d8389053?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 3"></a>
+        <a href="works_M_01.html"><img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/79571c4ee19983477d73f9761b18b14e00445f79a4681702b9133a1798fcc06c?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Portfolio 4"></a>
+      </div>
     </section>
-
+    
     <section class="skills">
-      <div class="skills-track">
+      <div class="skills-track first">
         <span>Illustrator</span>
         <span>Photoshop</span>
         <span>CSS</span>
@@ -133,16 +154,8 @@
         <span>Javascript</span>
         <span>Premiere</span>
         <span>InDesign</span>
-        <!-- 重複以無縫滾動 -->
-        <span>Illustrator</span>
-        <span>Photoshop</span>
-        <span>CSS</span>
-        <span>UI</span>
-        <span>HTML</span>
-        <span>Javascript</span>
-        <span>Premiere</span>
-        <span>InDesign</span>
-        <!-- 重複以無縫滾動 -->
+      </div>
+      <div class="skills-track second">
         <span>Illustrator</span>
         <span>Photoshop</span>
         <span>CSS</span>
@@ -159,5 +172,10 @@
     <address>Contact: <a href="mailto:kklic5000@gmail.com">kklic5000@gmail.com</a></address>
     <p>Copyright © Azuna All Rights Reserved.</p>
   </footer>
+  <script>
+//     const track = document.querySelector('.skills-track');
+// const width = track.scrollWidth / 2; // 获取实际内容宽度
+// track.style.animationDuration = `${width / 50}px`; // 动态调整速度
+  </script>
 </body>
 </html>

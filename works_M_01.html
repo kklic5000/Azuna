@@ -1,0 +1,439 @@
+<style>
+body {
+  margin: 0;
+  font-family: 'Swei Gothic CJK TC', -apple-system, Roboto, Helvetica, sans-serif;
+  background-color: #F0F0E4;
+  color: #537162;
+  padding: 0 0 124px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* 新增 */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  width: 100%; /* 新增 */
+  position: absolute; /* 新增 */
+  top: 0; /* 新增 */
+  left: 0; /* 新增 */
+  box-sizing: border-box; /* 新增 */
+}
+   
+
+
+    .brand-logo {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 18px;
+      font-weight: 400;
+      margin-top: 11px;
+    }
+
+    
+    .nav-links {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      align-items: center;
+      gap: 40px 93px;
+      font-size: 32px;
+      font-weight: 400;
+      justify-content: start;
+      flex-wrap: wrap;
+      margin: auto 0;
+    }
+
+    
+    .active-indicator {
+      background-color: rgb(83, 113, 98);
+      display: flex;
+      width: 105px;
+      height: 2px;
+    }
+    
+  
+.main-content {
+  margin-top: 121px; /* 調整為適當的間距，避免與 header 重疊 */
+  width: 100%;
+  max-width: 1146px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+    
+    .hero-image {
+      /* aspect-ratio: 1.55; */
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      border-radius: 20px;
+    }
+    
+    .project-details {
+      display: flex;
+      margin-top: 41px;
+      width: 100%;
+      flex-direction: column;
+      font-size: 20px;
+      color: rgb(49, 123, 114);
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      justify-content: start;
+      padding: 0 19px;
+    }
+    
+    .project-title {
+      font-size: 50px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+    
+    .project-year,
+    .project-tools {
+      margin-top: 11px;
+    }
+    
+    .tag-container {
+      display: flex;
+      margin-top: 41px;
+      width: 100%;
+      align-items: start;
+      gap: 11px;
+      font-size: 18px;
+      color: rgb(115, 173, 157);
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: 0.54px;
+      justify-content: start;
+      flex-wrap: wrap;
+      padding: 0 17px;
+    }
+    
+    .tag {
+      border-radius: 25px;
+      width: 113px;
+      padding: 7px 19px;
+      border: 1px solid rgb(110, 163, 166);
+    }
+    
+    .description-box {
+      border-radius: 12px;
+      background-color: rgb(253, 253, 242);
+      display: flex;
+      margin-top: 47px;
+      width: 1131px;
+      max-width: 100%;
+      flex-direction: column;
+      font-family: Swei Gothic CJK TC, -apple-system, Roboto, Helvetica, sans-serif;
+      color: rgb(49, 123, 114);
+      justify-content: center;
+      padding: 48px 73px;
+      border: 1px solid rgb(118, 170, 164);
+    }
+    
+    .section-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      
+    }
+    
+    .section-title {
+      font-size: 35px;
+      font-weight: 700;
+      letter-spacing: 1.05px;
+    }
+    
+    .section-divider {
+      border-radius: 4px;
+      background-color: rgb(49, 123, 114);
+      display: flex;
+      min-height: 1px;
+      margin-top: 17px;
+      width: 530px;
+      max-width: 100%;
+    }
+    
+    .section-text {
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: 0.69px;
+      margin-top: 17px;
+    }
+    
+    .gallery {
+      display: flex;
+      margin-top: 61px;
+      align-items: center;
+      gap: 30px;
+      justify-content: start;
+      flex-wrap: wrap;
+      
+    }
+    
+    .gallery-image {
+      aspect-ratio: 0.72;
+      object-fit: contain;
+      object-position: center;
+      width: 558px;
+      box-shadow: 2px 2px 17.6px 0px rgba(0, 0, 0, 0.04),
+        -2px 4px 11.5px 0px rgba(0, 0, 0, 0.05),
+        -1px 1px 17.3px 0px rgba(0, 0, 0, 0.05);
+      align-self: stretch;
+      border-radius: 20px;
+      min-width: 240px;
+      margin: auto 0;
+    }
+    
+    .credits-box {
+      border-radius: 12px;
+      background-color: rgb(253, 253, 242);
+      display: flex;
+      margin-top: 52px;
+      width: 100%;
+      max-width: 100%;
+      flex-direction: column;
+      font-family: Swei Gothic CJK TC, -apple-system, Roboto, Helvetica, sans-serif;
+      color: rgb(49, 123, 114);
+      justify-content: center;
+      padding: 40px 73px;
+      border: 1px solid rgb(118, 170, 164);
+    }
+    
+    @media (max-width: 991px) {
+      .portfolio-container {
+        padding-bottom: 100px;
+      }
+      
+      .nav-header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+      
+      .brand-logo {
+        font-size: 40px;
+      }
+      
+      .nav-links {
+        max-width: 100%;
+      }
+      
+      .nav-item-active {
+        white-space: initial;
+      }
+      
+      .main-content {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+      
+      .hero-image {
+        max-width: 100%;
+      }
+      
+      .project-details {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+      
+      .project-title {
+        max-width: 100%;
+        font-size: 40px;
+      }
+      
+      .project-year,
+      .project-tools {
+        max-width: 100%;
+      }
+      
+      .tag-container {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+      
+      .tag {
+        white-space: initial;
+        padding: 7px 20px;
+      }
+      
+      .description-box {
+        margin-top: 40px;
+        padding: 40px 20px;
+      }
+      
+      .section-content,
+      .section-title,
+      .section-text {
+        max-width: 100%;
+      }
+      
+      .gallery {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+      
+      .gallery-image {
+        max-width: 100%;
+      }
+      
+      .credits-box {
+        margin-top: 40px;
+        padding: 40px 20px;
+      }
+      @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-content {
+    margin-top: 80px;
+    padding: 0 15px;
+  }
+
+  .project-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .project-details {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .tag-container {
+    justify-content: center;
+  }
+
+  .description-box,
+  .credits-box {
+    padding: 30px 20px;
+  }
+
+  .gallery {
+    justify-content: center;
+  }
+
+  .gallery-image {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo {
+    font-size: 28px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .project-title {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-text {
+    font-size: 18px;
+  }
+
+  .tag {
+    font-size: 14px;
+    padding: 5px 12px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .description-box,
+  .credits-box {
+    padding: 20px;
+  }
+}
+    }
+</style>
+    
+    <body class="portfolio-container">
+        <header>
+            <div class="brand-logo">Azuna</div>
+            <nav>
+              <a href="index.html">Home</a>
+              <a href="#profhilo">Profhilo</a>
+              <a href="works.html">Works</a>
+            </nav>
+          </header>
+    
+      <article class="main-content">
+        <img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/f902e54e3f83d11b38448ea1610519ac4d568e04d12e49d87ab055ecb4409c5c?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Japanese restaurant menu design showcase" class="hero-image">
+        
+        <section class="project-details">
+          <h1 class="project-title">伊勝日式料理｜菜單設計</h1>
+          <p class="project-year">年份：2024</p>
+          <p class="project-tools">工具：Photoshop,Illustrator</p>
+        </section>
+    
+        <div class="tag-container" role="list">
+          <span class="tag" role="listitem">菜單設計</span>
+          <span class="tag" role="listitem">插畫</span>
+        </div>
+    
+        <section class="description-box">
+          <div class="section-content">
+            <h2 class="section-title">設計描述</h2>
+            <div class="section-divider" aria-hidden="true"></div>
+            <p class="section-text">
+              整體風格展現出濃厚的日式氛圍。插畫部分呈現菜餚的細膩質感與豐富層次，<br>
+              運用 Photoshop 進行電繪，著重描繪麵衣的效果將產品藉由電繪提升至另一層的美感。<br>
+              輔以日式毛筆字體與傳統印章風格的標誌設計，使插畫更具文化識別性。
+            </p>
+          </div>
+        </section>
+    
+        <div class="gallery">
+          <img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/4f289dd16fd15802919b8252a74fb009b57e391d0a9dd4d194cf0cf4165c243c?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Detailed view of menu design - first page" class="gallery-image">
+          <img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/e0153218104bbb0fc15f38eadb21480db42c8bf0f5a737edf815ff280bae80a8?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Detailed view of menu design - second page" class="gallery-image">
+        </div>
+    
+        <section class="credits-box">
+          <div class="section-content">
+            <h2 class="section-title">製作名單</h2>
+            <div class="section-divider" aria-hidden="true"></div>
+            <p class="section-text">Designer : 梓枰</p>
+          </div>
+        </section>
+      </article>
+    </body>
+    
