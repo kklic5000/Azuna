@@ -10,6 +10,24 @@
   src: url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff2) format("woff2")
   , url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff) format("woff");
 }
+* {
+      cursor: none !important; /* 強制隱藏所有元素的鼠標 */
+    }
+    .mouse-ball {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #4fa89f;
+      border-radius: 50%;
+      mix-blend-mode: normal; /* 反白效果 */
+      pointer-events: none; /* 防止遮擋點擊 */
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 0.2s ease-out, background 0.2s ease-out;
+      z-index: 9999;
+    }
+    a, button, .clickable {
+      position: relative;
+    }
     body {
       margin: 0;
       font-family: 'SweiGothicCJKtc-Regular', -apple-system, Roboto, Helvetica, sans-serif;
@@ -237,6 +255,7 @@
   </style>
 </head>
 <body>
+  <div class="mouse-ball"></div>
   <header>
     <div class="brand-logo">Azuna</div>
     <nav>
@@ -295,7 +314,6 @@
   </main>
 
   <footer>
-    <address>Contact: <a href="mailto:kklic5000@gmail.com">kklic5000@gmail.com</a></address>
     <p>Copyright © Azuna All Rights Reserved.</p>
   </footer>
 
@@ -321,6 +339,36 @@
     function toggleMenu() {
       document.getElementById('mobileMenu').classList.toggle('active');
     }
+    const ball = document.querySelector('.mouse-ball');
+    const clickableElements = document.querySelectorAll('a, button, .clickable');
+
+    // 追蹤鼠標移動
+    document.addEventListener('mousemove', (e) => {
+      ball.style.left = `${e.pageX}px`;
+      ball.style.top = `${e.pageY}px`;
+    });
+
+    // 防止鼠標超出視窗
+    document.addEventListener('mouseleave', () => {
+      ball.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      ball.style.opacity = '1';
+    });
+
+    // 鼠標懸停效果
+    clickableElements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        ball.style.transform = 'translate(-50%, -50%) scale(4)';
+        ball.style.background = '#4fa89f';
+        ball.style.mixBlendMode= 'multiply'; /* 反白效果 */
+      });
+
+      element.addEventListener('mouseleave', () => {
+        ball.style.transform = 'translate(-50%, -50%) scale(1)';
+      });
+    });
   </script>
 </body>
 </html>

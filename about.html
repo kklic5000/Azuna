@@ -1,0 +1,241 @@
+<style>
+    .profile-container {
+      background-color: rgba(240, 240, 228, 1);
+      display: flex;
+      padding: 0 0 205px;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .profile-wrapper {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+    
+    .header-nav {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 40px 100px;
+      font-family: Swei Gothic CJK TC, -apple-system, Roboto, Helvetica, sans-serif;
+      color: rgba(83, 113, 98, 1);
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 19px 63px;
+    }
+    
+    .brand-logo {
+      font-size: 63px;
+      font-weight: 900;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .nav-links {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      align-items: center;
+      gap: 40px 93px;
+      font-size: 32px;
+      font-weight: 400;
+      justify-content: start;
+      flex-wrap: wrap;
+      margin: auto 0;
+    }
+    
+    .nav-item {
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .nav-item-active {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      font-weight: 900;
+      width: 106px;
+      margin: auto 0;
+    }
+    
+    .active-indicator {
+      background-color: rgba(83, 113, 98, 1);
+      display: flex;
+      width: 105px;
+      height: 2px;
+    }
+    
+    .profile-content {
+      display: flex;
+      margin-top: 133px;
+      width: 100%;
+      align-items: center;
+      gap: 40px 62px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+    
+    .profile-image-wrapper {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      width: 620px;
+      margin: auto 0;
+      padding: 149px 73px;
+    }
+    
+    .profile-image {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 407px;
+      border-radius: 999px;
+      max-width: 100%;
+    }
+    
+    .profile-info {
+      border-radius: 12px;
+      background-color: rgba(253, 253, 242, 1);
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      font-family: Swei Gothic CJK TC, -apple-system, Roboto, Helvetica, sans-serif;
+      color: rgba(49, 123, 114, 1);
+      font-weight: 350;
+      justify-content: center;
+      width: 836px;
+      margin: auto 0;
+      padding: 50px 47px;
+      border: 1px solid rgba(118, 170, 164, 1);
+    }
+    
+    .info-content {
+      display: flex;
+      align-items: start;
+      gap: 32px 30px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+    
+    .name-primary {
+      font-size: 45px;
+      font-weight: 900;
+      letter-spacing: 1.35px;
+    }
+    
+    .name-secondary {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0.84px;
+    }
+    
+    .bio-text {
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.24px;
+      flex-grow: 1;
+      width: 717px;
+    }
+    
+    .section-title {
+      font-size: 26px;
+      letter-spacing: 0.78px;
+      flex-grow: 1;
+      width: 705px;
+    }
+    
+    .section-content {
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0.4px;
+      flex-grow: 1;
+      width: 705px;
+    }
+    
+    @media (max-width: 991px) {
+      .profile-container {
+        padding-bottom: 100px;
+      }
+      
+      .profile-wrapper {
+        max-width: 100%;
+      }
+      
+      .header-nav {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+      
+      .brand-logo {
+        font-size: 40px;
+      }
+      
+      .nav-links {
+        max-width: 100%;
+      }
+      
+      .nav-item-active {
+        white-space: initial;
+      }
+      
+      .profile-content {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+      
+      .profile-image-wrapper {
+        max-width: 100%;
+        padding: 100px 20px;
+      }
+      
+      .profile-info {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+      
+      .bio-text,
+      .section-title,
+      .section-content {
+        max-width: 100%;
+      }
+    }
+    </style>
+    
+    <section class="profile-container" role="main">
+      <div class="profile-wrapper">
+        <nav class="header-nav" role="navigation" aria-label="Main navigation">
+          <div class="brand-logo">Azuna</div>
+          <div class="nav-links">
+            <a href="#" class="nav-item" tabindex="0">Home</a>
+            <a href="#" class="nav-item" tabindex="0">Profhilo</a>
+            <div class="nav-item-active">
+              <a href="#" tabindex="0">Works</a>
+              <div class="active-indicator" aria-hidden="true"></div>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="profile-content">
+          <div class="profile-image-wrapper">
+            <img src="https://cdn.builder.io/api/v1/image/assets/872e1de963c842c3b4486ea858b2cb8e/d688dc40963f6dc0a32b0477ad212d47caa113cec47dad885a87bbfe47310023?apiKey=872e1de963c842c3b4486ea858b2cb8e&" alt="Profile photo of Zi-pin" class="profile-image" />
+          </div>
+          
+          <article class="profile-info">
+            <div class="info-content">
+              <h1 class="name-primary">梓枰</h1>
+              <h2 class="name-secondary">Zi-pin</h2>
+              <p class="bio-text">大學於商業設計科系畢業，曾任珠寶/拍賣公司擔任平面設計師，主要製作拍賣會視覺以及珠寶平面廣告，之後前往UI領域於Kiosk公司擔任UI設計，主要使用公司開發的軟體製作點餐視覺流程設計。  專於平面設計、插畫</p>
+              <h3 class="section-title">Tool skills：</h3>
+              <p class="section-content">Photoshop,Illustrator,Figma,html,css,JavaScript(JQuery), AfterEffect,Premiere</p>
+              <h3 class="section-title">Contact：</h3>
+              <p class="section-content">E-mail：kklic5000@mail.com</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
