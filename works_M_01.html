@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>伊勝日式料理 | 菜單設計</title>
+  <title>伊勝日式料理｜菜單設計</title>
   <style>
     @font-face {
       font-family:'SweiGothicCJKtc-Regular';
@@ -138,18 +138,66 @@
     }
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin: 50px 0;
-      padding: 0 20px;
-    }
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
 
-    .gallery-image {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 2px 2px 17.6px rgba(0,0,0,0.04);
-    }
+.gallery-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 30%; /* 保持1:1方形比例 */
+  object-fit: cover;
+  cursor: pointer;
+  position: relative;
+}
+.gallery-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+    /* 新增燈箱樣式 */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
 
     /* 响应式优化 */
     @media (max-width: 1200px) {
@@ -161,12 +209,17 @@
         margin: 30px 20px;
       }
     }
+    @media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
     @media (max-width: 768px) {
       header {
         position: relative;
         padding: 15px 20px;
-        flex-direction: column;
+        flex-direction: flex;
         gap: 15px;
       }
 
@@ -219,6 +272,9 @@
       .section-text br {
         display: none;
       }
+      .gallery {
+    grid-template-columns: 1fr;
+  }
     }
 
     /* 汉堡菜单样式 */
@@ -290,7 +346,7 @@
   </header>
 
   <article class="main-content">
-    <img src="https://i.meee.com.tw/wNKZxhA.png" alt="Japanese restaurant menu design showcase" class="hero-image">
+    <img src="img/Mnuu_Top.webp" alt="Japanese restaurant menu design showcase" class="hero-image">
     
     <section class="project-details">
       <h1 class="project-title">伊勝日式料理｜菜單設計</h1>
@@ -308,17 +364,26 @@
         <h2 class="section-title">設計描述</h2>
         <div class="section-divider"></div>
         <p class="section-text">
-          整體風格展現出濃厚的日式氛圍。插畫部分呈現菜餚的細膩質感與豐富層次，
-          運用 Photoshop 進行電繪，著重描繪麵衣的效果將產品藉由電繪提升至另一層的美感。
-          輔以日式毛筆字體與傳統印章風格的標誌設計，使插畫更具文化識別性。
+          整體風格展現出濃厚的日式氛圍。插畫部分呈現菜餚的細膩質感與豐富層次， 運用 Photoshop 進行電繪，著重描繪麵衣的效果將產品藉由電繪提升至另一層的美感。 輔以日式毛筆字體與傳統印章風格的標誌設計，使插畫更具文化識別性。    
         </p>
       </div>
     </section>
 
     <div class="gallery">
-      <img src="https://i.meee.com.tw/pQB4L0c.png" alt="Detailed view of menu design - first page" class="gallery-image">
-      <img src="https://i.meee.com.tw/F9s1487.png" alt="Detailed view of menu design - second page" class="gallery-image">
-    </div>
+        <div class="gallery-image">
+          <img src="img/Menu01.webp" alt="書籍設計 1" data-fullsize="img/Menu01.webp">
+        </div>
+        <div class="gallery-image">
+          <img src="img/Menu02.webp" alt="書籍設計 2" data-fullsize="img/Menu02.webp">
+        </div>
+          </div>
+      </div>
+      <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+          <button class="close-btn" onclick="closeLightbox()">&times;</button>
+          <img class="lightbox-image" id="lightboxImage" src="" alt="燈箱預覽">
+        </div>
+      </div>
 
     <section class="credits-box">
       <div class="section-content">
@@ -365,6 +430,38 @@
         menu.classList.remove('active');
       }
     });
+    function openLightbox(imgSrc, altText) {
+  const overlay = document.getElementById('lightboxOverlay');
+  const lightboxImg = document.getElementById('lightboxImage');
+  lightboxImg.src = imgSrc;
+  lightboxImg.alt = altText;
+  overlay.style.display = 'flex';
+}
+
+function closeLightbox() {
+  document.getElementById('lightboxOverlay').style.display = 'none';
+}
+
+// 點擊事件綁定
+document.querySelectorAll('.gallery-image img').forEach(img => {
+  img.addEventListener('click', () => {
+    openLightbox(img.dataset.fullsize, img.alt);
+  });
+});
+
+// 點擊遮罩關閉
+document.getElementById('lightboxOverlay').addEventListener('click', (e) => {
+  if(e.target === document.getElementById('lightboxOverlay')) {
+    closeLightbox();
+  }
+});
+
+// ESC鍵關閉
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') {
+    closeLightbox();
+  }
+});
   </script>
 </body>
 </html>
