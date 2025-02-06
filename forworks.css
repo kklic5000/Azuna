@@ -69,7 +69,24 @@
       padding: 0 20px;
       box-sizing: border-box;
     }
-
+    a.hero-image { /* 增加a元素選擇器提升優先級 */
+      display: block; /* 確保連結元素為區塊元素 */
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden; /* 確保圓角效果生效 */
+      transition: transform 0.3s ease; /* 可選添加過渡效果 */
+    }
+    a.hero-image:hover {
+      filter: blur(3px);
+      overflow: hidden;
+    }
+    a.hero-image img {
+      width: 100%;
+      height: auto;
+      display: block; /* 移除圖片底部間隙 */
+      border-radius: inherit; /* 繼承父元素圓角 */
+    }
     .hero-image {
       width: 90%;
       border-radius: 20px;
