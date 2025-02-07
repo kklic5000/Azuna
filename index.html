@@ -109,11 +109,14 @@
   background: none;
   white-space: nowrap;
   display: flex;
+  color: #537162;
+  opacity: 0.8;
 }
 
 .skills-track {
   display: flex;
   animation: scroll 45s linear infinite;
+  
 }
 
 .skills-track.second {
@@ -126,8 +129,16 @@
   margin-right: 40px;
   font-size: 16px;
   white-space: nowrap;
+
 }
 
+.skills-track :hover {
+  transition: all 0.3s ease;
+  transform: scale(1.4);
+  color: #2d9288;
+  opacity: 1;
+  cursor: pointer;
+}
 
     footer {
       display: flex;
