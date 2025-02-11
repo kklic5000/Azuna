@@ -27,7 +27,7 @@
       <a href="works.html">Works</a>
     </div>
   </header>
-
+  <button id="topButton">↑</button>
   <article class="main-content">
     <img src="img/kiosk_01_Top.webp" alt="Japanese restaurant menu design showcase" class="hero-image">
     
@@ -52,7 +52,18 @@
         </p>
       </div>
     </section>
+    <div class="buttonBox"><button class="openButton" data-video-path="video/池記kiosk.mp4">Kiosk 操作影片</button><button class="openButton" data-video-path="video/池記pos.mp4">POS 操作影片</button></div>
 
+    <!-- 燈箱結構 -->
+    <div class="lightbox" id="lightbox">
+      <div class="video-container">
+        <video controls autoplay id="videoPlayer">
+          <source src="" type="video/mp4">
+          您的瀏覽器不支援播放此影片。
+        </video>
+        <span class="close-btn" id="closeButton">&times;</span>
+      </div>
+    </div>
     <div class="gallery">
         <div class="gallery-image">
           <img src="img/kiosk_01_ (1).webp" alt="UI 1" data-fullsize="img/kiosk_01_ (1).webp">
