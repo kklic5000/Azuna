@@ -463,4 +463,27 @@ video {
       right: 15px;
       background-color: #488f7d;
   }
+  
+}
+
+.figma{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 90%;
+  height: 680px;
+}
+.figmabox{
+display: flex;
+/* 水平置中 */
+justify-content: center;    
+/* 垂直置中 */
+align-items: center;     
+margin: 10px;
+}
+@media (max-width: 768px) {
+.figma{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 90%;
+  height: 400px;
+}
+
 }
