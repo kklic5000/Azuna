@@ -107,7 +107,7 @@ const translations = {
 };
 
 // 初始化語言
-let currentLang = localStorage.getItem('language') || 'en';
+let currentLang = localStorage.getItem('language') || 'zh-TW';
 
 // 切換語言函數
 function switchLanguage(lang) {
