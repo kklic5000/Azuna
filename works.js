@@ -42,7 +42,8 @@ const translations = {
     'world_music_festival': "世界音樂節 | 平面設計",
     'cocokuma_breakfast_logo': "可可熊早餐店 視覺識別再造 | Logo",
     'design_book_cover_redesign': "《設計》書封重新設計 | 平面設計",
-    'taipei_zoo_ticket_redesign': "台北市立動物園票券重製 | 平面設計"
+    'taipei_zoo_ticket_redesign': "台北市立動物園票券重製 | 平面設計",
+    'kiosk_fireMaster': "Kiosk 火少爺炒飯  | UI 設計"
   },
   'en': {
   'all_works': 'All Works',
@@ -72,7 +73,8 @@ const translations = {
   'world_music_festival': "World Music Festival | Graphic Design",
   'cocokuma_breakfast_logo': "Coco Bear Breakfast | Visual Identity Redesign | Logo",
   'design_book_cover_redesign': "Redesign of 'Design' Book Cover | Graphic Design",
-  'taipei_zoo_ticket_redesign': "Taipei Zoo Ticket Redesign | Graphic Design"
+  'taipei_zoo_ticket_redesign': "Taipei Zoo Ticket Redesign | Graphic Design",
+    'kiosk_fireMaster': "Kiosk Fire Master Fried Rice  | UI Design"
 },
 'ja': {
   'all_works': 'すべての作品',
@@ -102,7 +104,8 @@ const translations = {
   'world_music_festival': "世界音楽祭｜グラフィックデザイン",
   'cocokuma_breakfast_logo': "可可熊朝食店｜ビジュアルアイデンティティ再構築｜ロゴ",
   'design_book_cover_redesign': "『設計』ブックカバー再デザイン｜グラフィックデザイン",
-  'taipei_zoo_ticket_redesign': "台北市立動物園チケット再製｜グラフィックデザイン"
+  'taipei_zoo_ticket_redesign': "台北市立動物園チケット再製｜グラフィックデザイン",
+    'kiosk_fireMaster': "Kiosk 火少爺チャーハン  | UI デザイン"
 }
 };
 
