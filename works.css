@@ -383,3 +383,7 @@
           background-color: #488f7d;
       }
     }
+    @media (max-width: 480px) {.mouse-ball {
+      display: none !important;
+    }
+    }

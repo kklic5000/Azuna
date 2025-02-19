@@ -286,6 +286,9 @@ grid-template-columns: repeat(2, 1fr);
 grid-template-columns: 1fr;
 gap: 5px;
 }
+.mouse-ball {
+  display: none !important;
+}
 }
 
 /* 汉堡菜单样式 */

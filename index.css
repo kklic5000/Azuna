@@ -256,6 +256,10 @@
           height: 600px;
         }
       }
+      @media (max-width: 480px) {.mouse-ball {
+        display: none !important;
+      }
+      }
       /* * {
         margin: 0;
         padding: 0;
