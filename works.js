@@ -110,7 +110,7 @@ const translations = {
 };
 
 // 初始化語言
-let currentLang = localStorage.getItem('language') || 'zh-TW';
+let currentLang = localStorage.getItem('language') || '';
 
 // 切換語言函數
 function switchLanguage(lang) {
